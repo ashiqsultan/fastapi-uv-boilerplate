@@ -2,6 +2,7 @@
 
 A boilerplate code to initiate new projects with FastAPI
 
+## Whats included
 - UV package manager.
 - Docker compose.
 - Logger
@@ -12,3 +13,4 @@ A boilerplate code to initiate new projects with FastAPI
 - Add a variable `ENVIRONMENT=development`
 - `docker compose up`
 
+- Go to `http://localhost:8008/docs`
