@@ -1,0 +1,14 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.egg-info
+.env.example
+README.md
+.python-version
+.pytest_cache
+.coverage
+dist
+build

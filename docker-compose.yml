@@ -1,0 +1,21 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fastapi_app
+    ports:
+      - "8008:8008"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: >
+      sh -c "if [ \"$$ENVIRONMENT\" = \"development\" ]; then
+               uv run fastapi dev app/main.py --host 0.0.0.0 --port 8008;
+             else
+               uv run fastapi run app/main.py --host 0.0.0.0 --port 8008;
+             fi"
+    restart: unless-stopped
