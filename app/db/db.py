@@ -1,9 +1,14 @@
 from typing import Optional, List, Any, AsyncGenerator
 import asyncpg
-import os
 from contextlib import asynccontextmanager
+from app.config import get_settings
 
-DATABASE_URL: str = os.getenv("PG_DB_STRING", "")
+# Initialize settings to construct database URL
+settings = get_settings()
+DATABASE_URL: str = (
+    f"postgresql://{settings.POSTGRES_USER}:{settings.POSTGRES_PASSWORD}"
+    f"@{settings.POSTGRES_HOST}:{settings.POSTGRES_PORT}/{settings.POSTGRES_DB}"
+)
 
 
 class Database:

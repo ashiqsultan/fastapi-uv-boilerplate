@@ -13,6 +13,13 @@ class Settings(BaseSettings):
         default="development", description="Environment: 'development' or 'production'"
     )
     DB_NAME: str = Field()
+    
+    # PostgreSQL connection variables
+    POSTGRES_USER: str = Field(description="PostgreSQL database user")
+    POSTGRES_PASSWORD: str = Field(description="PostgreSQL database password")
+    POSTGRES_DB: str = Field(description="PostgreSQL database name")
+    POSTGRES_HOST: str = Field(default="db", description="PostgreSQL host")
+    POSTGRES_PORT: int = Field(default=5432, description="PostgreSQL port")
 
     class Config:
         env_file = ".env"
