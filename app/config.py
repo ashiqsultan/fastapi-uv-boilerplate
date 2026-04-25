@@ -13,7 +13,7 @@ class Settings(BaseSettings):
         default="development", description="Environment: 'development' or 'production'"
     )
     DB_NAME: str = Field()
-    
+
     # PostgreSQL connection variables
     POSTGRES_USER: str = Field(description="PostgreSQL database user")
     POSTGRES_PASSWORD: str = Field(description="PostgreSQL database password")
