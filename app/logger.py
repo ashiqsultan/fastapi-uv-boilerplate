@@ -55,7 +55,7 @@ def get_logger(name: str = __name__) -> logging.Logger:
     file_handler = RotatingFileHandler(
         log_dir / "app.log",
         maxBytes=5 * 1024 * 1024,  # 5 MB per file
-        backupCount=3,              # app.log + 3 backups = 4 files max
+        backupCount=3,  # app.log + 3 backups = 4 files max
         encoding="utf-8",
     )
     file_handler.setLevel(logging.DEBUG)
