@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from app.logger import get_logger
 
 app = FastAPI()
+
 logger = get_logger(__name__)
 logger.info("Starting the application")
 
